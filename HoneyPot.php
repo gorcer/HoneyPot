@@ -24,8 +24,8 @@ class HoneyPot {
 		$domain = 'dnsbl.httpbl.org';
 		$dns_query = $access_key . '.' . implode ( '.', array_reverse ( explode ( '.', $ip ) ) ) . '.' . $domain;
 		
-		$dns_responce = @gethostbyname ( $dns_query );		
-		if ($dns_query != $dns_responce) {			
+		$dns_response = @gethostbyname ( $dns_query );		
+		if ($dns_query != $dns_response) {			
 			return false;
 		} else
 			return true;		
